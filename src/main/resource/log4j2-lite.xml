@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Properties>
+		<Property name="logdir">log/</Property>
+		<Property name="pattern">%d %p %C{1.} [%t] %m%n</Property>
+	</Properties>
+
+	<Appenders>
+		<Console name="STDOUT">
+			<PatternLayout>${pattern}</PatternLayout>
+		</Console>
+	</Appenders>
+
+	<Loggers>
+		<Logger name="com.gargoylesoftware.htmlunit" level="fatal">
+			<AppenderRef ref="STDOUT" />
+		</Logger>
+		
+		<Logger name="org.apache.http" level="fatal">
+		    <AppenderRef ref="STDOUT" />
+		</Logger>
+		
+		<Logger name="info_output" level="info">
+			<AppenderRef ref="STDOUT" />
+		</Logger>
+
+		<Root level="error">
+			<AppenderRef ref="STDOUT" />
+		</Root>
+	</Loggers>
+</Configuration>

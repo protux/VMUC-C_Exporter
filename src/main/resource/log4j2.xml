@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Properties>
+		<Property name="logdir">log/</Property>
+		<Property name="pattern">%d %p %C{1.} [%t] %m%n</Property>
+	</Properties>
+
+	<Appenders>
+		<Console name="STDOUT">
+			<PatternLayout>${pattern}</PatternLayout>
+		</Console>
+		<File name="Ausleser" fileName="${logdir}vmucexporter.log">
+			<PatternLayout>${pattern}</PatternLayout>
+		</File>
+		<File name="HtmlUnit" fileName="${logdir}htmlunit.log">
+			<PatternLayout>${pattern}</PatternLayout>
+		</File>
+		<File name="Apache" filename="${logdir}apache.log">
+			<PatternLayout>${pattern}</PatternLayout>
+		</File>
+		<File name="ROOT" fileName="${logdir}root.log">
+			<PatternLayout>${pattern}</PatternLayout>
+		</File>
+	</Appenders>
+
+	<Loggers>
+		<Logger name="de.nischwan.vmucexporter" level="debug">
+			<AppenderRef ref="Ausleser" />
+		</Logger>
+		
+		<Logger name="com.gargoylesoftware.htmlunit" level="fatal">
+			<AppenderRef ref="HtmlUnit" />
+		</Logger>
+		
+		<Logger name="org.apache.http" level="fatal">
+		    <AppenderRef ref="Apache" />
+		</Logger>
+		
+		<Logger name="info_output" level="info">
+			<AppenderRef ref="STDOUT" />
+		</Logger>
+
+		<Root level="error">
+			<AppenderRef ref="ROOT" />
+			<AppenderRef ref="STDOUT" />
+		</Root>
+	</Loggers>
+</Configuration>
