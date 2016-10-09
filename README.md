@@ -1,3 +1,6 @@
+# WARNING
+This tool might be deprecated. I wrote this tool at the beginning of 2016 and since then I have no device to test it and I have no information if the interface of VMU-Cs changed. So it is possible that this tool is deprecated. I published it for others to continue the work if they need it and have such a device. It is possible that I delete this project some day.
+
 # VMUC-C_Exporter
 
 This tool offers the possibility to download an export from a VMU-C ([more infos](https://www.gavazzionline.com/em79.htm)) device automatically.
